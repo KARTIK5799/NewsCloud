@@ -1,6 +1,7 @@
 const API_KEY = "ea5e3677b3374e78a3ccc556e5b38e38";
 const newsUrl = "https://newsapi.org/v2/everything?q=";
 const headingUrl = "https://newsapi.org/v2/top-headlines?country=";
+
 let articles = [];
 let topHeadlines = [];
 let currentIndex = 0;
@@ -13,12 +14,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function fetchNews(query) {
     try {
-        const response = await fetch(`${newsUrl}${query}&apiKey=${API_KEY}`);
+        const options = {
+            method: 'GET',
+            headers: {
+                'accept': 'application/json',
+                'Authorization': `Bearer ${API_KEY}`
+            }
+        };
+        const response = await fetch(`${newsUrl}${query}`, options);
+        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
         const data = await response.json();
         articles = data.articles;
         currentIndex = 0;
         bindNewsData();
-        console.log(data)
+        console.log(data);
     } catch (error) {
         console.error('Error fetching news:', error);
     }
@@ -26,11 +35,19 @@ async function fetchNews(query) {
 
 async function fetchTopHeadlines(country) {
     try {
-        const response = await fetch(`${headingUrl}${country}&apiKey=${API_KEY}`);
+        const options = {
+            method: 'GET',
+            headers: {
+                'accept': 'application/json',
+                'Authorization': `Bearer ${API_KEY}`
+            }
+        };
+        const response = await fetch(`${headingUrl}${country}`, options);
+        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
         const data = await response.json();
         topHeadlines = data.articles;
         bindHeadlinesData();
-        console.log(data)
+        console.log(data);
     } catch (error) {
         console.error('Error fetching top headlines:', error);
     }
