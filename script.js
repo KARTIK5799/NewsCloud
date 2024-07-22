@@ -1,7 +1,4 @@
-const API_KEY = "ea5e3677b3374e78a3ccc556e5b38e38";
-const newsUrl = "https://newsapi.org/v2/everything?q=";
-const headingUrl = "https://newsapi.org/v2/top-headlines?country=";
-
+const newsUrl = "/api/news";
 let articles = [];
 let topHeadlines = [];
 let currentIndex = 0;
@@ -9,19 +6,12 @@ const pageSize = 8;
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchNews("India");
-    fetchTopHeadlines("in"); 
+    fetchTopHeadlines("in");
 });
 
 async function fetchNews(query) {
     try {
-        const options = {
-            method: 'GET',
-            headers: {
-                'accept': 'application/json',
-                'Authorization': `Bearer ${API_KEY}`
-            }
-        };
-        const response = await fetch(`${newsUrl}${query}`, options);
+        const response = await fetch(`${newsUrl}?query=${query}`);
         if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
         const data = await response.json();
         articles = data.articles;
@@ -35,14 +25,7 @@ async function fetchNews(query) {
 
 async function fetchTopHeadlines(country) {
     try {
-        const options = {
-            method: 'GET',
-            headers: {
-                'accept': 'application/json',
-                'Authorization': `Bearer ${API_KEY}`
-            }
-        };
-        const response = await fetch(`${headingUrl}${country}`, options);
+        const response = await fetch(`${newsUrl}?query=${country}`);
         if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
         const data = await response.json();
         topHeadlines = data.articles;
