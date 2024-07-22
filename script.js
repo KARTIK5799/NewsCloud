@@ -18,6 +18,7 @@ async function fetchNews(query) {
         articles = data.articles;
         currentIndex = 0;
         bindNewsData();
+        console.log(data)
     } catch (error) {
         console.error('Error fetching news:', error);
     }
@@ -29,6 +30,7 @@ async function fetchTopHeadlines(country) {
         const data = await response.json();
         topHeadlines = data.articles;
         bindHeadlinesData();
+        console.log(data)
     } catch (error) {
         console.error('Error fetching top headlines:', error);
     }
