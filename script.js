@@ -1,4 +1,4 @@
-const API_KEY = process.env.API_KEY;
+const API_KEY = "ea5e3677b3374e78a3ccc556e5b38e38";
 const newsUrl = "https://newsapi.org/v2/everything?q=";
 const headingUrl = "https://newsapi.org/v2/top-headlines?country=";
 let articles = [];
@@ -6,7 +6,7 @@ let topHeadlines = [];
 let currentIndex = 0;
 const pageSize = 8;
 
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
     fetchNews("India");
     fetchTopHeadlines("in"); 
 });
@@ -103,7 +103,7 @@ function bindHeadlinesData() {
     updateSlidePosition(); 
 }
 
-window.addEventListener('scroll', () => {
+document.addEventListener('scroll', () => {
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100 && currentIndex < articles.length) {
         bindNewsData();
     }
