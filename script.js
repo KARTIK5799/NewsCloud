@@ -1,4 +1,4 @@
-const API_KEY = "ea5e3677b3374e78a3ccc556e5b38e38";
+const API_KEY = process.env.API_KEY;
 const newsUrl = "https://newsapi.org/v2/everything?q=";
 const headingUrl = "https://newsapi.org/v2/top-headlines?country=";
 let articles = [];
