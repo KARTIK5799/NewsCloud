@@ -70,7 +70,6 @@ function bindHeadlinesData() {
     const slidesContainer = document.querySelector('.top-stories');
     slidesContainer.innerHTML = ''; 
 
-    // Limit to 5 headlines
     const limitedHeadlines = topHeadlines.slice(0, 5);
 
     limitedHeadlines.forEach((headline, index) => {
