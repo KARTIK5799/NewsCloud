@@ -86,7 +86,6 @@ function bindHeadlinesData() {
             <div class="right-storydetails">
                 <div class="source-time">
                     <div class="source">
-                        <img src="default" alt="" class="sourceImg">
                         <p>${headline.source.name}</p>
                     </div>
                     <p>${new Date(headline.publishedAt).toLocaleString()}</p>
