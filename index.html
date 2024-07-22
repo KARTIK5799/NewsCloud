@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>NewsCloud</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-left">
+                <h1 class="logo">NewsCloud</h1>
+                <ul class="nav-tabs">
+                    <li class="tab active" data-category="top">Top Headlines</li>
+                    <li class="tab" data-category="sports">Sports</li>
+                    <li class="tab" data-category="politics">Politics</li>
+                    <li class="tab" data-category="technology">Technology</li>
+                    <li class="tab" data-category="entertainment">Entertainment</li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <div class="notification">
+                    <span class="material-symbols-outlined">notifications</span>
+                </div>
+                <div class="user-profile">
+                    <span class="material-symbols-outlined">account_circle</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="content">
+        <div class="welcome-section">
+            <h2 class="welcome">WELCOME TO NEWSCLOUD</h2>
+            <h2 class="slogen">🌍 "<span>Empowering</span> Your Day with the Latest Stories from Around the <span>World</span> 🌟 – Where Every Headline Matters and Every <span>Voice</span> is Heard. Stay <span>Informed</span>, Stay <span>Connected</span>!" 🗞️</h2>
+        </div>
+
+        <div class="slider">
+            <div class="top-stories slides">
+                <!-- Stories will be injected here by JavaScript -->
+            </div>
+            <button class="prev"><span class="material-symbols-outlined">arrow_back_ios</span></button>
+            <button class="next"><span class="material-symbols-outlined">arrow_forward_ios</span></button>
+        </div>
+
+        <div class="news-section">
+            <h2>Latest News</h2>
+            <div class="card-section" id="card-section">
+                <!-- News cards will be injected here by JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <template class="template-news-card">
+        <div class="news-card">
+            <img src="https://images.unsplash.com/photo-1575936123452-b67c3203c357?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="News Image" class="news-image">
+            <div class="news-content">
+                <h2 class="news-headline">Headline of the News Article</h2>
+                <div class="news-meta">
+                    <span class="news-time">2 hours ago</span>
+                    <span class="news-source">Source Name</span>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+</html>
